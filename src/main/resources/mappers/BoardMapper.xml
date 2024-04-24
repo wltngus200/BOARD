@@ -25,7 +25,25 @@
         SELECT board_id as boardId, title, contents, writer, created_at as createdAt
         FROM board
         WHERE board_id=#{board_id}
+        <!--알리아스로 내가 가진 변수의 이름-->
     </select>
+
+    <update id="putBoard">
+        UPDATE board
+        <!--<set> 콤마를 없애고 자동으로 set으로 적어줌 -->
+            SET updated_at = NOW()
+            <if test="title!=null and title !=''">
+                ,title=#{title}
+            </if>
+            <if test="contents!=null and contents !=''">
+                , contents=#{contents}
+            </if>
+            <if test="writer!=null and writer !=''">
+                , writer=#{writer}
+            </if>
+            WHERE board_id=#{boardId}
+        <!--</set>-->
+    </update>
 </mapper>
 
 

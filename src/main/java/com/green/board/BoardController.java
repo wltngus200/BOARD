@@ -32,9 +32,18 @@ public class BoardController{
         return service.getBoardList();
     }
 
-    @GetMapping("{boardId}")
+    @GetMapping("/{boardId}")
+    // /가 생략되지만 있는 상태
+    //오버라이딩과는 다르지만 담당자가 역할을 나누기 위한 차별점을 적어줌 /숫자로 URL에 표현
     public BoardGetDetailRes getBoardOne(@PathVariable long boardId){
         return service.getBoardOne(boardId);
+    }
+
+    @PutMapping
+    //JSON으로 넘어오는 경우 @RequestBody
+    public int putBoard(@RequestBody BoardPutReq p){
+        //나중엔 리턴타입이 인트가 아님!
+        return service.putBoard(p);
     }
 }
 /*

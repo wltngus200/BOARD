@@ -10,4 +10,5 @@ public class BoardGetRes {
     private String title;
     private String writer;
     private String createdAt;
+    //글 목록(list)을 보는 것 그렇기 때문에 contents가 없다
 }

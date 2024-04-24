@@ -13,4 +13,5 @@ public class BoardGetDetailRes {
     private String contents;
     private String writer;
     private String createdAt;
+    //n번 게시글을 보는 것 contents를 가지고 있다
 }
