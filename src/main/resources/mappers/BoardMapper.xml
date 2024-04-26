@@ -30,19 +30,19 @@
 
     <update id="putBoard">
         UPDATE board
-        <!--<set> 콤마를 없애고 자동으로 set으로 적어줌 -->
-            SET updated_at = NOW()
+        <!--콤마를 없애고 자동으로 set으로 적어줌-->
+        <set>
             <if test="title!=null and title !=''">
                 ,title=#{title}
             </if>
             <if test="contents!=null and contents !=''">
                 , contents=#{contents}
             </if>
-            <if test="writer!=null and writer !=''">
+            <if test="writerId!=0">
                 , writer=#{writer}
             </if>
-            WHERE board_id=#{boardId}
-        <!--</set>-->
+        </set>
+        WHERE board_id=#{boardId}
     </update>
 </mapper>
 

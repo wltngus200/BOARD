@@ -30,6 +30,7 @@ public class BoardService {
         return mapper.getBoardOne(boardId);
     }
     public int putBoard(BoardPutReq p){
+        System.out.println("service: " + p);
         return mapper.putBoard(p);
     }
 }

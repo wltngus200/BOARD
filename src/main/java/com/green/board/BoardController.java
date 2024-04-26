@@ -42,6 +42,7 @@ public class BoardController{
     @PutMapping
     //JSON으로 넘어오는 경우 @RequestBody
     public int putBoard(@RequestBody BoardPutReq p){
+        System.out.println("controller: " + p);
         //나중엔 리턴타입이 인트가 아님!
         return service.putBoard(p);
     }
